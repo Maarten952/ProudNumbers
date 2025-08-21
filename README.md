@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProudNumbers</title>
+
 </head>
 <body>
   <h1>Welkom bij ProudNumbers!</h1>
