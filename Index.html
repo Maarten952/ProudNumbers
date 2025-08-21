@@ -10,56 +10,96 @@
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background: #f0f4f8;
     color: #333;
     line-height: 1.6;
   }
+
+  a { text-decoration: none; color: inherit; }
+
   header {
-    background-color: #1e3a8a;
+    background-color: #4f46e5;
     color: white;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
   }
   header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   header p {
     font-size: 1.2rem;
+    margin-top: 0.5rem;
   }
+
   main {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem;
   }
+
   section {
     margin-bottom: 3rem;
   }
+
   h2 {
-    color: #1e3a8a;
-    border-bottom: 2px solid #1e3a8a;
+    color: #4f46e5;
+    border-bottom: 2px solid #c7d2fe;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
   }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
   ul {
     padding-left: 1.5rem;
+    margin-bottom: 1rem;
   }
+  li {
+    margin-bottom: 0.5rem;
+  }
+
   .services, .pricing, .extra-services {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
+
   .card {
     background: white;
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #1e3a8a;
+  }
+
   footer {
-    background: #1e3a8a;
+    background: #4f46e5;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .highlight {
+    color: #10b981;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
   }
 </style>
 </head>
@@ -74,84 +114,84 @@
 
   <section>
     <h2>Over mij</h2>
-    <p>Ik ben Maarten Jansen, 30 jaar, accountant en woonachtig in Tilburg. Als oprichter van Proud Numbers combineer ik mijn ervaring in accountancy met een missie: transparantie, betrouwbaarheid en maatschappelijke verantwoordelijkheid in de financiële sector.</p>
+    <p>Hallo! Ik ben Maarten Jansen, 30 jaar, accountant in Tilburg. Met Proud Numbers wil ik een vriendelijke, transparante en maatschappelijk verantwoorde accountancy bieden. Samen zorgen we dat jouw financiën kloppen, met oog voor ethiek en toekomst.</p>
   </section>
 
   <section>
-    <h2>Waarom Proud Numbers?</h2>
-    <p>Mijn visie: Na meer dan tien jaar in de accountancy – van controle bij stichtingen tot advies voor het MKB – zie ik dat de sector onder druk staat door financiële prikkels en incidenten zoals Vestia en Imtech. Bij Proud Numbers wil ik bijdragen aan een ethisch sterkere, transparante en toekomstbestendige accountancy.</p>
+    <h2>Waarom kiezen voor Proud Numbers?</h2>
+    <p>Na meer dan tien jaar in de accountancy zie ik dat de sector soms te veel focust op cijfers en te weinig op mensen. Bij Proud Numbers draait het om:</p>
     <ul>
-      <li><strong>Eerlijke beloning:</strong> mijn persoonlijke beloning is gemaximeerd conform de richtlijnen van NBA/SRA op een salaris van een assistent accountant met 10 jaar ervaring.</li>
-      <li><strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar, inclusief toelichting.</li>
-      <li><strong>Maatschappelijke impact:</strong> jaarlijkse reserves gaan naar maatschappelijk verantwoorde organisaties, in overleg met onze klanten.</li>
-      <li><strong>Kennisdeling:</strong> jaarlijks begeleid ik één stagiaire om ideeën en best practices verder te verspreiden.</li>
-      <li><strong>Open klantenlijst:</strong> de namen van onze klanten staan op de website, zodat transparantie altijd gewaarborgd blijft.</li>
-      <li><strong>Periodieke evaluatie:</strong> ieder halfjaar vraag ik steekproefsgewijs ondernemingen naar hun mening omtrent de dienstverlening. De resultaten worden op de website gepubliceerd.</li>
+      <li>💚 <strong>Eerlijke beloning:</strong> mijn salaris is transparant en gemaximeerd.</li>
+      <li>🔍 <strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar.</li>
+      <li>🌱 <strong>Maatschappelijke impact:</strong> jaarlijkse reserves gaan naar verantwoordelijke initiatieven.</li>
+      <li>📘 <strong>Kennisdeling:</strong> jaarlijks begeleid ik één stagiaire om best practices te verspreiden.</li>
+      <li>👥 <strong>Open klantenlijst:</strong> klanten zijn zichtbaar voor volledige transparantie.</li>
+      <li>📝 <strong>Feedback:</strong> ieder halfjaar evaluaties van klanten, met resultaten openbaar.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Mijn diensten</h2>
+    <h2>Onze diensten</h2>
     <div class="services">
       <div class="card">
-        <h3>Administratie</h3>
-        <p>Het inrichten en bijhouden van de administratie</p>
+        <h3>📂 Administratie</h3>
+        <p>Het overzichtelijk bijhouden van jouw administratie zodat jij zorgeloos kunt ondernemen.</p>
       </div>
       <div class="card">
-        <h3>Btw & Jaarlijkse aangifte</h3>
-        <p>Verzorging van btw-aangiftes en de jaarlijkse inkomstenbelasting</p>
+        <h3>🧾 Belastingen & aangiftes</h3>
+        <p>Wij verzorgen btw-aangiftes en jaarlijkse inkomstenbelasting op een manier die begrijpelijk en helder is.</p>
       </div>
       <div class="card">
-        <h3>Risicoanalyse</h3>
-        <p>Signaleren van fiscale, economische en juridische risico’s</p>
+        <h3>⚖️ Risicoanalyse</h3>
+        <p>We signaleren fiscale, economische en juridische risico’s, zodat je altijd voorbereid bent.</p>
       </div>
       <div class="card">
-        <h3>Kwartaalrapportages</h3>
-        <p>Opstellen van kwartaalrapportages afgestemd op jouw behoeften</p>
+        <h3>📊 Rapportages</h3>
+        <p>Kwartaalrapportages afgestemd op jouw behoeften, visueel en makkelijk te begrijpen.</p>
       </div>
       <div class="card">
-        <h3>Begeleiding op maat</h3>
-        <p>Automatisering via Yuki, bankkoppeling, leveranciersbeheer, betalingen, facturatiemodule, kwartaalrapportages en fiscale updates</p>
+        <h3>🤝 Begeleiding op maat</h3>
+        <p>Automatisering, bankkoppeling, facturatiemodules en fiscale updates afgestemd op jouw situatie.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Prijs en software</h2>
+    <h2>Onze pakketten</h2>
     <div class="pricing">
       <div class="card">
-        <h3>Micro-onderneming</h3>
-        <p>&lt;150 transacties/jaar: €35 p/m</p>
+        <h3>🌱 Micro-onderneming</h3>
+        <p>&lt;150 transacties/jaar: <span class="highlight">€35 p/m</span></p>
       </div>
       <div class="card">
-        <h3>Kleine onderneming</h3>
-        <p>&lt;50 transacties/m: €60 p/m inclusief fiscale aangiftes</p>
+        <h3>🚀 Kleine onderneming</h3>
+        <p>&lt;50 transacties/maand: <span class="highlight">€60 p/m</span> inclusief fiscale aangiftes</p>
       </div>
       <div class="card">
-        <h3>Extra transacties</h3>
-        <p>Meer dan 50 transacties per maand (max. 150):<br>
+        <h3>➕ Extra transacties</h3>
+        <p>Meer dan 50 transacties per maand:<br>
         €0,75 per losse bon (niet digitaal)<br>
         €0,40 per handmatig verwerkte factuur<br>
         €0,20 per automatisch verwerkte nota</p>
       </div>
     </div>
-    <p>Voorkeur software: Yuki (hoge mate van automatisering). Andere pakketten? Geen probleem.</p>
+    <p>Voorkeur software: <strong>Yuki</strong>, hoge mate van automatisering. Andere pakketten? Geen probleem!</p>
   </section>
 
   <section>
     <h2>Overige diensten</h2>
     <div class="extra-services">
       <div class="card">
-        <h3>Stichtingen, BV’s & verenigingen</h3>
-        <p>Werk op maat met vaste budgetten</p>
+        <h3>🏢 Stichtingen, BV’s & verenigingen</h3>
+        <p>Op maat gemaakte oplossingen met duidelijke budgetten en overzicht.</p>
       </div>
       <div class="card">
-        <h3>Financieel advies</h3>
-        <p>Margebewaking, verbeteringen AO/IC, autorisatieprocedures, koppeling subsystemen aan boekhouding</p>
+        <h3>💡 Financieel advies</h3>
+        <p>Margebewaking, verbeteringen AO/IC en koppeling van systemen aan je boekhouding.</p>
       </div>
       <div class="card">
-        <h3>Rapportages & prognoses</h3>
-        <p>Opstellen en deponeren publicatiestukken, liquidaties, prognoses (P&L, cashflow), projectadministraties, BI-dashboards</p>
+        <h3>📈 Rapportages & prognoses</h3>
+        <p>Publicatiestukken, liquidaties, P&L, cashflow, projectadministraties en BI-dashboards.</p>
       </div>
     </div>
   </section>
