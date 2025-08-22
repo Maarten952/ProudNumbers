@@ -1,96 +1,264 @@
-/* ===== Navbar ===== */
-nav {
-  background: rgba(255, 255, 255, 0.95); /* lichte achtergrond met transparantie */
-  backdrop-filter: blur(10px); /* glasachtig effect */
-  color: var(--text-dark);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: background 0.3s, box-shadow 0.3s;
-}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proud Numbers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mint: #98FF98;
+    --sage: #9CAF88;
+    --fern: #4F7942;
+    --jade: #00A86B;
+    --emerald: #50C878;
+    --forest: #228B22;
+    --text-dark: #1f2937;
+    --bg-light: #f0fdf4;
+    --white: #ffffff;
+  }
 
-nav .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
 
-nav .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--forest);
-}
+  a { text-decoration: none; color: inherit; }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-nav ul li a {
-  color: var(--text-dark);
-  font-weight: 500;
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: var(--mint);
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* ===== Mobile menu ===== */
-.menu-toggle {
-  display: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: var(--forest);
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
+  /* ===== Navbar ===== */
+  nav {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    position: absolute;
-    top: 70px;
-    right: 1rem;
-    padding: 1rem;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s, box-shadow 0.3s;
   }
-  nav ul.active {
+
+  nav .nav-container {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  @keyframes slideDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
+
+  nav .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--forest);
   }
-  .menu-toggle {
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav ul li a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  nav ul li a::after {
+    content: '';
     display: block;
+    width: 0;
+    height: 2px;
+    background: var(--mint);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
   }
-}
+
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+  /* ===== Mobile menu ===== */
+  .menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--forest);
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: absolute;
+      top: 70px;
+      right: 1rem;
+      padding: 1rem;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    nav ul.active {
+      display: flex;
+      animation: slideDown 0.3s ease forwards;
+    }
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--jade);
+    color: white;
+    padding: 6rem 1rem 4rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    color: var(--forest);
+    border-bottom: 3px solid var(--emerald);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .services, .pricing, .extra-services {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: var(--fern);
+  }
+
+  footer {
+    background: var(--forest);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--jade);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">🌱 Proud Numbers</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
+    <ul>
+      <li><a href="visie.html">Mijn visie</a></li>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="actualiteiten.html">Actualiteiten</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <h1>Proud Numbers</h1>
+  <p>Transparantie, betrouwbaarheid en maatschappelijke verantwoordelijkheid in accountancy</p>
+</header>
+
+<main>
+
+  <section id="over-mij">
+    <h2>Over mij</h2>
+    <p>Hallo! Ik ben Maarten Jansen, 30 jaar, accountant in Tilburg. Al meer dan tien jaar werk ik in de accountancy ...</p>
+  </section>
+
+  <section id="waarom">
+    <h2>Waarom kiezen voor Proud Numbers?</h2>
+    <ul>
+      <li>💚 <strong>Eerlijke beloning:</strong> mijn salaris is transparant en gemaximeerd.</li>
+      <li>🔍 <strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar.</li>
+      <li>🌱 <strong>Maatschappelijke impact:</strong> jaarlijkse reserves gaan naar verantwoordelijke initiatieven.</li>
+      <li>📘 <strong>Kennisdeling:</strong> jaarlijks begeleid ik één stagiaire om best practices te verspreiden.</li>
+      <li>👥 <strong>Open klantenlijst:</strong> klanten zijn zichtbaar voor volledige transparantie.</li>
+      <li>📝 <strong>Feedback:</strong> ieder halfjaar evaluaties van klanten, met resultaten openbaar.</li>
+    </ul>
+  </section>
+
+  <section id="diensten">
+    <h2>Onze diensten</h2>
+    <div class="services">
+      <div class="card"><h3>📂 Administratie</h3><p>Het overzichtelijk bijhouden ...</p></div>
+      <div class="card"><h3>🧾 Belastingen & aangiftes</h3><p>Wij verzorgen btw-aangiftes ...</p></div>
+      <div class="card"><h3>⚖️ Risicoanalyse</h3><p>We signaleren fiscale ...</p></div>
+      <div class="card"><h3>📊 Rapportages</h3><p>Kwartaalrapportages afgestemd ...</p></div>
+      <div class="card"><h3>🤝 Begeleiding op maat</h3><p>Automatisering, bankkoppeling ...</p></div>
+    </div>
+  </section>
+
+  <section id="pakketten">
+    <h2>Onze pakketten</h2>
+    <div clas
