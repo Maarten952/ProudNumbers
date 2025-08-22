@@ -62,10 +62,11 @@
   nav ul {
     list-style: none;
     display: flex;
+    justify-content: space-between; /* Spreid de items over de hele breedte */
     gap: 2rem;
     margin: 0;
     padding: 0;
-    transition: all 0.3s ease-in-out;
+    flex: 1; /* Laat de ul de beschikbare ruimte gebruiken */
   }
 
   nav ul li a {
@@ -73,6 +74,7 @@
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
+    text-align: center; /* Zorgt dat hover-underline in het midden blijft */
   }
 
   nav ul li a::after {
@@ -84,7 +86,8 @@
     transition: width 0.3s;
     position: absolute;
     bottom: -3px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   nav ul li a:hover::after {
@@ -230,7 +233,6 @@
 </header>
 
 <main>
-
   <section id="over-mij">
     <h2>Over mij</h2>
     <p>Hallo! Ik ben Maarten Jansen, 30 jaar, accountant in Tilburg. Al meer dan tien jaar werk ik in de accountancy ...</p>
@@ -258,7 +260,11 @@
       <div class="card"><h3>🤝 Begeleiding op maat</h3><p>Automatisering, bankkoppeling ...</p></div>
     </div>
   </section>
+</main>
 
-  <section id="pakketten">
-    <h2>Onze pakketten</h2>
-    <div clas
+<footer>
+  &copy; 2025 Proud Numbers
+</footer>
+
+</body>
+</html>
