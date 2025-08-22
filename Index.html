@@ -8,11 +8,9 @@
 <style>
 :root {
   --mint: #98FF98;
-  --sage: #9CAF88;
-  --fern: #4F7942;
+  --forest: #228B22;
   --jade: #00A86B;
   --emerald: #50C878;
-  --forest: #228B22;
   --text-dark: #1f2937;
   --bg-light: #f0fdf4;
   --white: #ffffff;
@@ -33,7 +31,6 @@ a { text-decoration: none; color: inherit; }
 nav {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  color: var(--text-dark);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -43,7 +40,6 @@ nav {
 
 nav .nav-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -52,18 +48,15 @@ nav .nav-container {
 nav .logo {
   font-size: 1.6rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   color: var(--forest);
+  margin-right: 3rem; /* ruimte tussen logo en menu */
+  white-space: nowrap;
 }
 
-/* Centered menu items */
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center; /* Centraal uitlijnen */
-  gap: 2rem; /* Ruimte tussen de menu-items */
+  gap: 2rem; /* ruimte tussen menu-items */
   margin: 0;
   padding: 0;
 }
@@ -73,11 +66,6 @@ nav ul li a {
   font-weight: 500;
   padding: 0.5rem 0;
   position: relative;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: var(--forest);
 }
 
 nav ul li a::after {
@@ -106,26 +94,22 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 768px) {
+  nav .nav-container {
+    justify-content: space-between;
+  }
   nav ul {
     display: none;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
     position: absolute;
     top: 70px;
     right: 1rem;
+    background: rgba(255,255,255,0.95);
     padding: 1rem;
-    width: 200px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
   nav ul.active {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
-  }
-  @keyframes slideDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
   }
   .menu-toggle {
     display: block;
@@ -165,16 +149,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
-p {
+p, li {
   margin-bottom: 1rem;
-}
-
-ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-li {
-  margin-bottom: 0.5rem;
 }
 
 .services {
@@ -198,7 +174,7 @@ li {
 
 .card h3 {
   margin-top: 0;
-  color: var(--fern);
+  color: var(--forest);
 }
 
 footer {
@@ -207,16 +183,10 @@ footer {
   text-align: center;
   padding: 1.5rem;
 }
-
-.highlight {
-  color: var(--jade);
-  font-weight: 600;
-}
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
   <div class="nav-container">
     <div class="logo">🌱 Proud Numbers</div>
@@ -245,4 +215,29 @@ footer {
     <h2>Waarom kiezen voor Proud Numbers?</h2>
     <ul>
       <li>💚 <strong>Eerlijke beloning:</strong> mijn salaris is transparant en gemaximeerd.</li>
-      <li>🔍 <strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar.</l
+      <li>🔍 <strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar.</li>
+      <li>🌱 <strong>Maatschappelijke impact:</strong> jaarlijkse reserves gaan naar verantwoordelijke initiatieven.</li>
+      <li>📘 <strong>Kennisdeling:</strong> jaarlijks begeleid ik één stagiaire om best practices te verspreiden.</li>
+      <li>👥 <strong>Open klantenlijst:</strong> klanten zijn zichtbaar voor volledige transparantie.</li>
+      <li>📝 <strong>Feedback:</strong> ieder halfjaar evaluaties van klanten, met resultaten openbaar.</li>
+    </ul>
+  </section>
+
+  <section id="diensten">
+    <h2>Onze diensten</h2>
+    <div class="services">
+      <div class="card"><h3>📂 Administratie</h3><p>Het overzichtelijk bijhouden ...</p></div>
+      <div class="card"><h3>🧾 Belastingen & aangiftes</h3><p>Wij verzorgen btw-aangiftes ...</p></div>
+      <div class="card"><h3>⚖️ Risicoanalyse</h3><p>We signaleren fiscale ...</p></div>
+      <div class="card"><h3>📊 Rapportages</h3><p>Kwartaalrapportages afgestemd ...</p></div>
+      <div class="card"><h3>🤝 Begeleiding op maat</h3><p>Automatisering, bankkoppeling ...</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Proud Numbers
+</footer>
+
+</body>
+</html>
