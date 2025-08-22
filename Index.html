@@ -6,21 +6,69 @@
 <title>Proud Numbers</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --mint: #98FF98;
+    --sage: #9CAF88;
+    --fern: #4F7942;
+    --jade: #00A86B;
+    --emerald: #50C878;
+    --forest: #228B22;
+    --text-dark: #1f2937;
+    --bg-light: #f0fdf4;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f4f8;
-    color: #333;
+    background: var(--bg-light);
+    color: var(--text-dark);
     line-height: 1.6;
   }
 
   a { text-decoration: none; color: inherit; }
 
-  header {
-    background-color: #4f46e5;
+  /* ===== Navbar ===== */
+  nav {
+    background: var(--fern);
     color: white;
-    padding: 3rem 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  nav .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  nav ul li a:hover {
+    color: var(--mint);
+  }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--jade);
+    color: white;
+    padding: 4rem 1rem;
     text-align: center;
   }
   header h1 {
@@ -43,8 +91,8 @@
   }
 
   h2 {
-    color: #4f46e5;
-    border-bottom: 2px solid #c7d2fe;
+    color: var(--forest);
+    border-bottom: 3px solid var(--emerald);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -82,28 +130,64 @@
 
   .card h3 {
     margin-top: 0;
-    color: #1e3a8a;
+    color: var(--fern);
   }
 
   footer {
-    background: #4f46e5;
+    background: var(--fern);
     color: white;
     text-align: center;
     padding: 1.5rem;
   }
 
   .highlight {
-    color: #10b981;
+    color: var(--jade);
     font-weight: 600;
   }
 
-  @media (max-width: 600px) {
-    header h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
+  /* ===== Mobile menu ===== */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background: var(--fern);
+      position: absolute;
+      top: 60px;
+      right: 0;
+      padding: 1rem;
+      width: 200px;
+      border-radius: 0 0 0 10px;
+    }
+    nav ul.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
   }
 </style>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">🌱 Proud Numbers</div>
+  <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
+  <ul>
+    <li><a href="#over-mij">Over mij</a></li>
+    <li><a href="#waarom">Waarom</a></li>
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#pakketten">Pakketten</a></li>
+    <li><a href="#extra">Overige</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
 <header>
   <h1>Proud Numbers</h1>
@@ -112,16 +196,13 @@
 
 <main>
 
-  <section>
+  <section id="over-mij">
     <h2>Over mij</h2>
-    <p>Hallo! Ik ben Maarten Jansen, 30 jaar, accountant in Tilburg. Al meer dan tien jaar werk ik in de accountancy, waarvan de helft in de controle van stichtingen en de andere helft in advisering van het MKB. De afgelopen decennia werd onze sector getroffen door meerdere schandalen, zoals Vestia, Imtech en de recente fraudegevallen bij opleidingen. Hoe kan een accountant haar primaire taak – het bewaken van betrouwbaarheid en ethiek – uitvoeren als de sector zelf ogenschijnlijk niet onder controle is?
-Ik geloof dat financiële prikkels soms een verkeerd precedent scheppen, waardoor objectiviteit en ethiek onder druk komen te staan. Dit tast niet alleen de kwaliteit van ons werk aan, maar ook de ontwikkeling van ons beroep. Met Proud Numbers wil ik bijdragen aan het versterken van de fundering van ons vak. Dit doe ik volgens de volgende richtlijnen:
-</p>
+    <p>Hallo! Ik ben Maarten Jansen, 30 jaar, accountant in Tilburg. Al meer dan tien jaar werk ik in de accountancy ...</p>
   </section>
 
-  <section>
+  <section id="waarom">
     <h2>Waarom kiezen voor Proud Numbers?</h2>
-    <p>Na meer dan tien jaar in de accountancy zie ik dat de sector soms te veel focust op cijfers en te weinig op mensen. Bij Proud Numbers draait het om:</p>
     <ul>
       <li>💚 <strong>Eerlijke beloning:</strong> mijn salaris is transparant en gemaximeerd.</li>
       <li>🔍 <strong>Volledige transparantie:</strong> kwartaalcijfers en bestedingen zijn openbaar.</li>
@@ -132,77 +213,27 @@ Ik geloof dat financiële prikkels soms een verkeerd precedent scheppen, waardoo
     </ul>
   </section>
 
-  <section>
+  <section id="diensten">
     <h2>Onze diensten</h2>
     <div class="services">
-      <div class="card">
-        <h3>📂 Administratie</h3>
-        <p>Het overzichtelijk bijhouden van jouw administratie zodat jij zorgeloos kunt ondernemen.</p>
-      </div>
-      <div class="card">
-        <h3>🧾 Belastingen & aangiftes</h3>
-        <p>Wij verzorgen btw-aangiftes en jaarlijkse inkomstenbelasting op een manier die begrijpelijk en helder is.</p>
-      </div>
-      <div class="card">
-        <h3>⚖️ Risicoanalyse</h3>
-        <p>We signaleren fiscale, economische en juridische risico’s, zodat je altijd voorbereid bent.</p>
-      </div>
-      <div class="card">
-        <h3>📊 Rapportages</h3>
-        <p>Kwartaalrapportages afgestemd op jouw behoeften, visueel en makkelijk te begrijpen.</p>
-      </div>
-      <div class="card">
-        <h3>🤝 Begeleiding op maat</h3>
-        <p>Automatisering, bankkoppeling, facturatiemodules en fiscale updates afgestemd op jouw situatie.</p>
-      </div>
+      <div class="card"><h3>📂 Administratie</h3><p>Het overzichtelijk bijhouden ...</p></div>
+      <div class="card"><h3>🧾 Belastingen & aangiftes</h3><p>Wij verzorgen btw-aangiftes ...</p></div>
+      <div class="card"><h3>⚖️ Risicoanalyse</h3><p>We signaleren fiscale ...</p></div>
+      <div class="card"><h3>📊 Rapportages</h3><p>Kwartaalrapportages afgestemd ...</p></div>
+      <div class="card"><h3>🤝 Begeleiding op maat</h3><p>Automatisering, bankkoppeling ...</p></div>
     </div>
   </section>
 
-  <section>
+  <section id="pakketten">
     <h2>Onze pakketten</h2>
     <div class="pricing">
-      <div class="card">
-        <h3>🌱 Micro-onderneming</h3>
-        <p>&lt;150 transacties/jaar: <span class="highlight">€35 p/m</span></p>
-      </div>
-      <div class="card">
-        <h3>🚀 Kleine onderneming</h3>
-        <p>&lt;50 transacties/maand: <span class="highlight">€60 p/m</span> inclusief fiscale aangiftes</p>
-      </div>
-      <div class="card">
-        <h3>➕ Extra transacties</h3>
-        <p>Meer dan 50 transacties per maand:<br>
-        €0,75 per losse bon (niet digitaal)<br>
-        €0,40 per handmatig verwerkte factuur<br>
-        €0,20 per automatisch verwerkte nota</p>
-      </div>
+      <div class="card"><h3>🌱 Micro-onderneming</h3><p>&lt;150 transacties/jaar: <span class="highlight">€35 p/m</span></p></div>
+      <div class="card"><h3>🚀 Kleine onderneming</h3><p>&lt;50 transacties/maand: <span class="highlight">€60 p/m</span></p></div>
+      <div class="card"><h3>➕ Extra transacties</h3><p>Meer dan 50 transacties ...</p></div>
     </div>
-    <p>Voorkeur software: <strong>Yuki</strong>, hoge mate van automatisering. Andere pakketten? Geen probleem!</p>
   </section>
 
-  <section>
+  <section id="extra">
     <h2>Overige diensten</h2>
     <div class="extra-services">
-      <div class="card">
-        <h3>🏢 Stichtingen, BV’s & verenigingen</h3>
-        <p>Op maat gemaakte oplossingen met duidelijke budgetten en overzicht.</p>
-      </div>
-      <div class="card">
-        <h3>💡 Financieel advies</h3>
-        <p>Margebewaking, verbeteringen AO/IC en koppeling van systemen aan je boekhouding.</p>
-      </div>
-      <div class="card">
-        <h3>📈 Rapportages & prognoses</h3>
-        <p>Publicatiestukken, liquidaties, P&L, cashflow, projectadministraties en BI-dashboards.</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  &copy; 2025 Proud Numbers – Maarten Jansen
-</footer>
-
-</body>
-</html>
+      <div class="card"><h3>🏢 Stichtingen, BV’s & verenigingen</h3><p>Op maat gemaakte opl
