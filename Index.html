@@ -40,7 +40,7 @@ nav {
 
 nav .nav-container {
   display: flex;
-  align-items: flex-start; /* menu-items iets lager */
+  align-items: center; /* Verticaal gecentreerd */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -59,7 +59,8 @@ nav ul {
   gap: 2rem; /* ruimte tussen menu-items */
   margin: 0;
   padding: 0;
-  padding-top: 0.3rem; /* subtiele verschuiving naar beneden */
+  /* subtiele verticale fine-tuning */
+  margin-top: 0.1rem;
 }
 
 nav ul li a {
@@ -113,6 +114,7 @@ nav ul li a:hover::after {
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 0; /* reset voor mobiel */
   }
   nav ul.active {
     display: flex;
