@@ -33,23 +33,31 @@
     background: var(--fern);
     color: white;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 50;
   }
 
+  nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   nav .logo {
     font-size: 1.4rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     margin: 0;
     padding: 0;
   }
@@ -170,6 +178,9 @@
     .menu-toggle {
       display: block;
     }
+    nav .nav-container {
+      justify-content: space-between;
+    }
   }
 </style>
 </head>
@@ -177,14 +188,16 @@
 
 <!-- Navbar -->
 <nav>
-  <div class="logo">🌱 Proud Numbers</div>
-  <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
-  <ul>
-    <li><a href="visie.html">Mijn visie</a></li>
-    <li><a href="diensten.html">Diensten</a></li>
-    <li><a href="actualiteiten.html">Actualiteiten</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <div class="nav-container">
+    <div class="logo">🌱 Proud Numbers</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
+    <ul>
+      <li><a href="visie.html">Mijn visie</a></li>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="actualiteiten.html">Actualiteiten</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <header>
@@ -234,4 +247,15 @@
   <section id="extra">
     <h2>Overige diensten</h2>
     <div class="extra-services">
-      <div class="card"><h3>🏢 Stichtingen, BV’s & verenigingen</h3><p>Op maat gemaakte opl
+      <div class="card"><h3>🏢 Stichtingen, BV’s & verenigingen</h3><p>Op maat gemaakte oplossingen ...</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Proud Numbers – Alle rechten voorbehouden.</p>
+</footer>
+
+</body>
+</html>
